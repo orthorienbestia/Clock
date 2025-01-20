@@ -46,11 +46,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityManager;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.ColorUtils;
@@ -316,6 +322,8 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         mPulseAnimator.setInterpolator(PULSE_INTERPOLATOR);
         mPulseAnimator.setRepeatCount(ValueAnimator.INFINITE);
         mPulseAnimator.start();
+
+        initializeSnoozeOptionsDialog();
     }
 
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
@@ -420,7 +428,7 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         // allow snooze/dismiss by tapping on respective icons.
         if (isAccessibilityEnabled() || !isSwipeActionEnabled) {
             if (view == mSnoozeButton) {
-                snooze();
+                showSnoozeOptionsDialog();
             } else if (view == mDismissButton) {
                 dismiss();
             } else if (view == mAlarmButton) {
@@ -496,7 +504,7 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
 
             mInitialPointerIndex = MotionEvent.INVALID_POINTER_ID;
             if (snoozeFraction == 1.0f) {
-                snooze();
+                showSnoozeOptionsDialog();
             } else if (dismissFraction == 1.0f) {
                 dismiss();
             } else {
@@ -888,5 +896,25 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
         });
 
         return alertAnimator;
+    }
+
+    private void initializeSnoozeOptionsDialog() {
+        // Initialize the snooze options dialog
+        // This method will be called in onCreate() to set up the dialog
+    }
+
+    private void showSnoozeOptionsDialog() {
+        // Show the snooze options dialog when the snooze button is clicked
+        // This method will be called in onClick() and onTouch() methods
+    }
+
+    private void handleSnoozeButtonClick() {
+        // Handle snooze button clicks and show the snooze options dialog
+        // This method will be called in onClick() and onTouch() methods
+    }
+
+    private void handleCustomSnoozeTimeInput() {
+        // Handle custom snooze time input and update the snooze duration
+        // This method will be called in the snooze() method
     }
 }
