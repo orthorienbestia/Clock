@@ -157,6 +157,79 @@
             tools:text="@string/description_direction_both"
             tools:textColor="@color/md_theme_outline" />
 
+        <!-- Snooze options dialog -->
+        <LinearLayout
+            android:id="@+id/snooze_options_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioGroup
+                android:id="@+id/snooze_options_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/snooze_5_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 minutes" />
+
+                <RadioButton
+                    android:id="@+id/snooze_10_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 minutes" />
+
+                <RadioButton
+                    android:id="@+id/snooze_15_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15 minutes" />
+
+                <RadioButton
+                    android:id="@+id/snooze_20_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 minutes" />
+
+                <RadioButton
+                    android:id="@+id/snooze_25_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 minutes" />
+
+                <RadioButton
+                    android:id="@+id/snooze_30_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 minutes" />
+
+                <RadioButton
+                    android:id="@+id/snooze_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Custom" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/custom_snooze_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter custom snooze time (minutes)"
+                android:inputType="number"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
